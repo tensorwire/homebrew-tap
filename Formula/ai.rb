@@ -45,9 +45,9 @@ class Ai < Formula
   def caveats
     <<~EOS
       Quick start:
+        ai train data=corpus.txt
         ai pull Qwen/Qwen2.5-0.5B
         ai chat Qwen2.5-0.5B
-        ai train --dim 512 --data corpus.txt
 
       Models stored in ~/.ai/models/
     EOS
@@ -55,5 +55,6 @@ class Ai < Formula
 
   test do
     assert_match "train", shell_output("#{bin}/ai --help")
+    assert_match "v1.1.0", shell_output("#{bin}/ai --version")
   end
 end
