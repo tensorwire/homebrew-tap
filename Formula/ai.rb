@@ -37,10 +37,25 @@ class Ai < Formula
 
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin/"ai", "."
 
-    # Install pre-compiled Metal kernels if on macOS
-    %w[gemm_metal4.metallib fused_train.metallib].each do |lib|
-      path = buildpath/"../mongoose/kernels/#{lib}"
-      ln_sf path, bin/lib if path.exist?
+    # Install Metal kernels (macOS only)
+    if OS.mac?
+      kernels_dir = buildpath/"../mongoose/kernels"
+
+      # Use pre-compiled metallibs from the repo
+      %w[gemm_metal4.metallib fused_train.metallib].each do |lib|
+        prebuilt = kernels_dir/lib
+        if prebuilt.exist?
+          cp prebuilt, bin/lib
+        else
+          # Compile from source as fallback
+          source = kernels_dir/lib.sub(".metallib", ".metal")
+          if source.exist?
+            air = kernels_dir/lib.sub(".metallib", ".air")
+            system "xcrun", "metal", "-std=metal4.0", "-O2", "-c", source, "-o", air
+            system "xcrun", "metallib", "-o", bin/lib, air
+          end
+        end
+      end
     end
   end
 
