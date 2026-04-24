@@ -1,8 +1,8 @@
 class Ai < Formula
   desc "GPU-accelerated ML CLI — train, infer, quantize, serve LLMs"
   homepage "https://github.com/open-ai-org/ai"
-  url "https://github.com/open-ai-org/ai/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "5804ff6ec11e68f2654bbc317c8a7af3b2a5fa6758d4778ca4328874738ca779"
+  url "https://github.com/open-ai-org/ai/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "6c8576e8eef34b30ce22302cc4e9ccfa5fd0d7d91a41f3099b8fa7609ea3632a"
   license "MIT"
   head "https://github.com/open-ai-org/ai.git", branch: "master"
 
@@ -72,6 +72,6 @@ class Ai < Formula
 
   test do
     assert_match "train", shell_output("#{bin}/ai --help")
-    assert_match "v1.3.1", shell_output("#{bin}/ai --version")
+    assert_match "v1.4.0", shell_output("#{bin}/ai --version")
   end
 end
