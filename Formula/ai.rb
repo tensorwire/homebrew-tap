@@ -2,7 +2,7 @@ class Ai < Formula
   desc "GPU-accelerated ML CLI — train, infer, quantize, serve LLMs"
   homepage "https://github.com/open-ai-org/ai"
   url "https://github.com/open-ai-org/ai/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "4b630276c9bf587771712bf0beea3a0628c720246e68c3ebc2179e77337f8a98"
+  sha256 "ae4423d6985f15736f70092be0f464c70be99211369f1315010d26b9493b4153"
   license "MIT"
   head "https://github.com/open-ai-org/ai.git", branch: "master"
 
