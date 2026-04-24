@@ -1,8 +1,8 @@
 class Ai < Formula
   desc "GPU-accelerated ML CLI — train, infer, quantize, serve LLMs"
   homepage "https://github.com/open-ai-org/ai"
-  url "https://github.com/open-ai-org/ai/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "fe2ba4692d3a5ae589c4b6b9dcee4c47b0df258a1cd4014cf7f35ba973f34d93"
+  url "https://github.com/open-ai-org/ai/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 ""
   license "MIT"
   head "https://github.com/open-ai-org/ai.git", branch: "master"
 
@@ -42,7 +42,7 @@ class Ai < Formula
       kernels_dir = buildpath/"../mongoose/kernels"
 
       # Use pre-compiled metallibs from the repo
-      %w[gemm_metal4.metallib fused_train.metallib].each do |lib|
+      %w[gemm_metal4.metallib fused_train.metallib infer.metallib].each do |lib|
         prebuilt = kernels_dir/lib
         if prebuilt.exist?
           cp prebuilt, bin/lib
@@ -72,6 +72,6 @@ class Ai < Formula
 
   test do
     assert_match "train", shell_output("#{bin}/ai --help")
-    assert_match "v1.1.1", shell_output("#{bin}/ai --version")
+    assert_match "v1.3.0", shell_output("#{bin}/ai --version")
   end
 end
