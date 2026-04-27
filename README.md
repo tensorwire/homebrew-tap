@@ -1,5 +1,7 @@
 # open-ai.org Homebrew Tap
 
+> **This project has moved to [github.com/tensorwire/homebrew-tap](https://github.com/tensorwire/homebrew-tap).** Updates will be published under [github.com/tensorwire](https://github.com/tensorwire). Code remaining in open-ai-org is unmaintained.
+
 ```bash
 brew tap open-ai-org/tap
 ```
