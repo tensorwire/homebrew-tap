@@ -1,9 +1,9 @@
 class Mongoose < Formula
   desc "GPU compute library for Go — CUDA, Metal, WebGPU, CPU"
   homepage "https://github.com/tensorwire/mongoose"
-  url "https://github.com/tensorwire/mongoose/archive/v0.1.0.tar.gz"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
-  license "MIT"
+  url "https://github.com/tensorwire/mongoose/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "0ae7e6130a96f9a23ab3dd693b48be409a0199dbe08d4e53d5da11a092ae8fa4"
+  license "Apache-2.0"
   head "https://github.com/tensorwire/mongoose.git", branch: "main"
 
   depends_on "go" => :build
