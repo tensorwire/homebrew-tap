@@ -1,10 +1,10 @@
 class Mongoose < Formula
   desc "GPU compute library for Go — CUDA, Metal, WebGPU, CPU"
-  homepage "https://github.com/open-ai-org/mongoose"
-  url "https://github.com/open-ai-org/mongoose/archive/v0.1.0.tar.gz"
+  homepage "https://github.com/tensorwire/mongoose"
+  url "https://github.com/tensorwire/mongoose/archive/v0.1.0.tar.gz"
   sha256 "0000000000000000000000000000000000000000000000000000000000000000"
   license "MIT"
-  head "https://github.com/open-ai-org/mongoose.git", branch: "main"
+  head "https://github.com/tensorwire/mongoose.git", branch: "main"
 
   depends_on "go" => :build
   depends_on xcode: :build  # for Metal/Swift
@@ -39,7 +39,7 @@ class Mongoose < Formula
     <<~EOS
       Mongoose is a Go library. To use it in your project:
 
-        go get github.com/open-ai-org/mongoose
+        go get github.com/tensorwire/mongoose
 
       The Metal GPU binary has been installed to:
         #{bin}/mongoose-metal
