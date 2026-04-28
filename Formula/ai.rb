@@ -1,32 +1,30 @@
 class Ai < Formula
   desc "GPU-accelerated ML CLI — train, infer, quantize, serve LLMs"
-  homepage "https://github.com/open-ai-org/ai"
-  url "https://github.com/open-ai-org/ai/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "3c873f5d0025362505070dafb502149c8c479e35c1af0cde0e3917609768e45d"
-  license "MIT"
-  head "https://github.com/open-ai-org/ai.git", branch: "master"
+  homepage "https://github.com/tensorwire/ai"
+  license "Apache-2.0"
+  head "https://github.com/tensorwire/ai.git", branch: "main"
 
   depends_on "go" => :build
 
   # Dependencies — cloned alongside for local replace directives
   resource "mongoose" do
-    url "https://github.com/open-ai-org/mongoose.git", branch: "master", using: :git
+    url "https://github.com/tensorwire/mongoose.git", branch: "main", using: :git
   end
 
   resource "helix" do
-    url "https://github.com/open-ai-org/helix.git", branch: "master", using: :git
+    url "https://github.com/tensorwire/helix.git", branch: "main", using: :git
   end
 
   resource "needle" do
-    url "https://github.com/open-ai-org/needle.git", branch: "master", using: :git
+    url "https://github.com/tensorwire/needle.git", branch: "main", using: :git
   end
 
   resource "gguf" do
-    url "https://github.com/open-ai-org/gguf.git", branch: "master", using: :git
+    url "https://github.com/tensorwire/gguf.git", branch: "main", using: :git
   end
 
   resource "tokenizer" do
-    url "https://github.com/open-ai-org/tokenizer.git", branch: "master", using: :git
+    url "https://github.com/tensorwire/tokenizer.git", branch: "main", using: :git
   end
 
   def install
