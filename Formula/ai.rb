@@ -2,7 +2,7 @@ class Ai < Formula
   desc "GPU-accelerated ML CLI — train, infer, quantize, serve LLMs"
   homepage "https://github.com/tensorwire/ai"
   url "https://github.com/tensorwire/ai/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "966b187a3ade6322ed311b1fba52430b734032d4db7f519001e12b4bbe59916a"
+  sha256 "9e25f5c6b0f176b1c91ec79ba95514d9d06196c5c3299fd026bc31e881dcdb79"
   license "Apache-2.0"
   head "https://github.com/tensorwire/ai.git", branch: "main"
 
@@ -15,7 +15,7 @@ class Ai < Formula
   def install
     resource("mongoose").stage(buildpath/"../mongoose")
 
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin/"ai", "."
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}"), "-o", bin/"ai", "."
 
     if OS.mac?
       kernels_dir = buildpath/"../mongoose/kernels"
