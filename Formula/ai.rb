@@ -1,8 +1,8 @@
 class Ai < Formula
   desc "GPU-accelerated ML CLI — train, infer, quantize, serve LLMs"
   homepage "https://github.com/tensorwire/ai"
-  url "https://github.com/tensorwire/ai/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "9e25f5c6b0f176b1c91ec79ba95514d9d06196c5c3299fd026bc31e881dcdb79"
+  url "https://github.com/tensorwire/ai/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "614bf235af27084408bec0fe52b1f79f27ca06d8ebdf9725392343869850a432"
   license "Apache-2.0"
   head "https://github.com/tensorwire/ai.git", branch: "main"
 
